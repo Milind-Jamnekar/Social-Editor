@@ -116,6 +116,30 @@ button {
   flex-direction: column;
   width: 100%;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.4s;
+  animation: fade-in-from-left 0.5s;
+}
+
+.menu__button:hover {
+  background-color: hsla(186, 51%, 45%, 0.242);
+  color: rgba(255, 255, 255, 0.368);
+}
+
+.menu__button--active {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #39a2ae;
+  position: relative;
+}
+
+.menu__button--active::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0;
+  left: 0;
 }
 
 .menu__icon {
@@ -125,6 +149,17 @@ button {
 .menu__text {
   font-weight: 500;
   font-size: 14px;
+}
+
+@keyframes fade-in-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 
 /**************/
